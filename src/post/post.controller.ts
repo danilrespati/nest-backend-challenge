@@ -5,11 +5,7 @@ import {
     Body,
     UseGuards,
     Request,
-    NotFoundException,
-    ForbiddenException,
 } from '@nestjs/common';
-import { UsersService } from '../users/users.service';
-import { UserRole } from '../users/user.entity';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { ThrottlerGuard } from '@nestjs/throttler';
 import { PostService } from './post.service';
@@ -18,7 +14,6 @@ import { PostService } from './post.service';
 export class PostController {
     constructor(
         private readonly postService: PostService,
-        private readonly usersService: UsersService,
     ) {}
 
     @UseGuards(ThrottlerGuard, JwtAuthGuard)

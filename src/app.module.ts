@@ -8,6 +8,7 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { ScoresModule } from './scores/scores.module';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
+import { PostModule } from './post/post.module';
 
 @Module({
   imports: [
@@ -38,6 +39,7 @@ import { LoggerMiddleware } from './common/middleware/logger.middleware';
     UsersModule,
     AuthModule,
     ScoresModule,
+    PostModule
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -20,4 +20,10 @@ export class User {
 
     @Column({ type: 'enum', enum: UserRole, default: UserRole.USER })
     role: UserRole;
+
+    @Column("int", { array: true, default: []})
+    follower: number[];
+
+    @Column("int", { array: true, default: []})
+    following: number[];
 }
